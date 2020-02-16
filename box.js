@@ -1,20 +1,21 @@
-class Box{
-    constructor(x,y,w,h,options) {
+class Box {
+    constructor(x,y,width,height) {
       var options = {
-        'restitution': 0.5,
-        'friction': 0.5,
-        'density': 0.1
+        'friction': 0,
+        'density': 1
       }
-      this.body = Bodies.rectangle(x,y,w,h,options);
-      this.w = w; 
-      this.h = h;
+      this.body = Bodies.rectangle(x,y,width,height,options)
+      this.width = width;
+      this.height = height;
+  
       World.add(world, this.body);
     }
     display(){
-      var pos =this.body.position;
+      var pos = this.body.position;
       rectMode(CENTER);
-      fill("black");
-      rect(pos.x, pos.y, this.w,this.h);brown
+      fill("red");
+      rect(pos.x, pos.y, this.width, this.height);
+      push();
       pop();
     }
-};
+  }S
