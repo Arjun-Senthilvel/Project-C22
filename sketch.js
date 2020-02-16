@@ -2,6 +2,9 @@
 // CREATE GLOBAL VARIABLES
 // For Engine, World, Bodies and any other that you have in mind to make your coding life easier.
 // remember to create an array of boxes.
+const Engine = Matter.Engine;
+const World = Matter.World;
+const Bodies = Matter.Bodies;
 
  
 var boxes = [];
@@ -24,6 +27,9 @@ function setup() {
  
 function mousePressed() {
     if (mouseY < 350) {
+        if(mousePressed()) {
+            push(new Box(mouseX, mouseY, 20, 20));
+        }
         // Every time a mouse press occures create a new box.
     }
 }
@@ -36,29 +42,4 @@ function draw() {
     var fVal = gSlider.value();
  
     // Use a for loop to show all the boxes
-
-}
- 
-
-// You can either create a file for the class Box or build a simple function that creates one box at a time.
-// I have gone for the second option.
-function Box(x, y, w, h, options) {
-
-    // add options such as friction and restitution. Experiment with the values
-    var options = {
-
-    }
- 
-    // create your box using the function arguments
-    // x - x-coordinate
-    // y - y-coordinate
-    // w - width of the box
-    // h - height of the box
-
- 
-
-    // Create a show method which will draw the box every time it is called inside the draw method.
-    // remember to push and pop.
-    this.show = function () {
-    }
 }
